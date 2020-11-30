@@ -9,11 +9,14 @@ const Profile = () => {
 
   const displayUserProfile = async () => {
     try {
-      const getUserProfileToDisplay = await fetch("https://mern-stack-teamwork.herokuapp.com/api/v1/userpost", {
-        headers: {
-          Authorization: "Bearer " + localStorage.getItem("jwt"),
-        },
-      });
+      const getUserProfileToDisplay = await fetch(
+        "https://mern-stack-teamwork.herokuapp.com/api/v1/userpost",
+        {
+          headers: {
+            Authorization: "Bearer " + localStorage.getItem("jwt"),
+          },
+        }
+      );
       const profileResult = await getUserProfileToDisplay.json();
       setMyPhotos(profileResult.myPosts);
     } catch (error) {

@@ -4,12 +4,14 @@ import { useParams } from "react-router-dom";
 
 const Profile = () => {
   const [userProfile, setProfile] = useState(null);
-  
+
   const { state, dispatch } = useContext(UserContext);
   const { userid } = useParams();
   // console.log(userid);
 
-  const [showFollow, setShowFollow] = useState(state?!state.following.includes(userid):true);
+  const [showFollow, setShowFollow] = useState(
+    state ? !state.following.includes(userid) : true
+  );
 
   const displayUserProfile = async () => {
     try {
