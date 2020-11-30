@@ -51,7 +51,7 @@ const Signup = () => {
       return;
     }
     try {
-      const newUser = await fetch("/api/v1/signup", {
+      const newUser = await fetch("https://mern-stack-teamwork.herokuapp.com/api/v1/signup", {
         method: "post",
         headers: {
           "Content-Type": "application/json",
